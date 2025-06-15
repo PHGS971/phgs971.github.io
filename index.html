@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SniperX Hub</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }body {
+  background-color: #121212;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+  display: none;
+}
+
+.content.active {
+  display: block;
+}
+
+.tab-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 0.8rem 0;
+  border-top: 1px solid #333;
+}
+
+.tab {
+  color: #aaa;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.tab.active {
+  color: #4fc3f7;
+}
+
+.material-icons {
+  font-size: 28px;
+  display: block;
+}
+
+.btn {
+  background-color: #1e88e5;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #1565c0;
+}
+
+  </style>
+</head>
+<body>
+  <div id="home" class="content active">
+    <h1>Bem-vindo(a) ao PHGS 🇧🇷 SnīpęrX HūB site!</h1>
+  </div>  <div id="scripts" class="content">
+    <h2>Script para copiar</h2>
+    <button class="btn" onclick="copiarScript()">📋 Copiar Script</button>
+  </div>  <div id="discord" class="content">
+    <h2>Nosso Discord</h2>
+    <button class="btn" onclick="abrirDiscord()">💬 Entrar no Discord</button>
+  </div>  <div class="tab-bar">
+    <div class="tab active" onclick="mostrarAba('home', this)">
+      <span class="material-icons">home</span>
+    </div>
+    <div class="tab" onclick="mostrarAba('scripts', this)">
+      <span class="material-icons">code</span>
+    </div>
+    <div class="tab" onclick="mostrarAba('discord', this)">
+      <span class="material-icons">forum</span>
+    </div>
+  </div>  <script>
+    function mostrarAba(id, el) {
+      document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    function copiarScript() {
+      const script = `loadstring(game:HttpGet('https://raw.githubusercontent.com/phgs2456/sniperxhub/main/hub.lua'))()`;
+      navigator.clipboard.writeText(script).then(() => {
+        alert("Script copiado com sucesso!");
+      });
+    }
+
+    function abrirDiscord() {
+      window.open("https://discord.gg/seulink", "_blank");
+    }
+  </script></body>
+</html>
