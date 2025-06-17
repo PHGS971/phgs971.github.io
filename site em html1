@@ -1,0 +1,61 @@
+// para acessar seus arquivos siga este exemplo: 
+// 1ande seus arquivos primeiros com o mesmo nome do index como "meuarquivo.zip" ou mude o nome e depois e envie e ira funcionar!
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Servidor de Arquivos PHGS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e1e;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #00ff88;
+    }
+    .file {
+      background: #2a2a2a;
+      margin: 15px auto;
+      padding: 15px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 10px #00ff88;
+    }
+    .file a {
+      color: #00ff88;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .file a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>📁 Servidor de Arquivos</h1>
+
+  <div class="file">
+    <p>📄 Documento PDF</p>
+    <a href="documento.pdf" download>Baixar</a>
+  </div>
+
+  <div class="file">
+    <p>🎵 Música MP3</p>
+    <a href="musica.mp3" download>Baixar</a>
+  </div>
+
+  <div class="file">
+    <p>📦 Arquivo ZIP</p>
+    <a href="meuarquivo.zip" download>Baixar</a>
+  </div>
+
+</body>
+</html>
