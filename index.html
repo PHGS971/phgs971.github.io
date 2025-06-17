@@ -1,121 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SniperX Hub</title>
+  <meta charset="UTF-8">
+  <title>Servidor de Arquivos PHGS</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background-color: #0f0f0f;
-      color: #f5f5f5;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #1e1e1e;
+      color: #fff;
       text-align: center;
-      overflow-x: hidden;
+      padding: 20px;
     }
-
-    h1, p, .btn {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s forwards;
-    }
-
     h1 {
-      font-size: 3em;
-      margin-bottom: 0.2em;
-      animation-delay: 0.2s;
+      color: #00ff88;
     }
-
-    p {
-      font-size: 1.3em;
-      margin-bottom: 2em;
-      color: #cccccc;
-      animation-delay: 0.4s;
-    }
-
-    .btn {
-      background-color: #1e88e5;
-      border: none;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1em;
+    .file {
+      background: #2a2a2a;
+      margin: 15px auto;
+      padding: 15px;
       border-radius: 12px;
-      cursor: pointer;
-      transition: transform 0.2s ease, background 0.3s ease;
-      margin: 10px;
-      width: 250px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 10px #00ff88;
     }
-
-    .btn:hover {
-      background-color: #1565c0;
-      transform: scale(1.05);
+    .file a {
+      color: #00ff88;
+      text-decoration: none;
+      font-size: 18px;
     }
-
-    .btn:nth-of-type(1) { animation-delay: 0.6s; }
-    .btn:nth-of-type(2) { animation-delay: 0.8s; }
-    .btn:nth-of-type(3) { animation-delay: 1s; }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .footer {
-      margin-top: 3em;
-      font-size: 0.9em;
-      color: #666;
-      animation: fadeInUp 0.8s forwards;
-      animation-delay: 1.2s;
-      opacity: 0;
+    .file a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <h1>SniperX Hub 🚀</h1>
-  <p>Scripts rápidos e úteis para Roblox</p>
+  <h1>📁 Servidor de Arquivos PHGS 🇧🇷</h1>
 
-  <button class="btn" onclick="copyScript()">📋 Copiar Script</button>
-  <button class="btn" onclick="baixarExecutor()">📥 Baixar Executor</button>
-  <button class="btn" onclick="entrarDiscord()">💬 Entrar no Discord</button>
+  <div class="file">
+    <p>📄 Documento PDF (num tem nada ainda</p>
+    <a href="documento.pdf" download>Baixar</a>
+  </div>
 
-  <div class="footer">Feito por phgs2456 • 2025</div>
+  <div class="file">
+    <p>🎵 Música MP3 (num tem nada ainda</p>
+    <a href="musica.mp3" download>Baixar</a>
+  </div>
 
-  <script>
-    function copyScript() {
-      const script = `loadstring(game:HttpGet('https://raw.githubusercontent.com/phgs2456/sniperxhub/main/hub.lua'))()`;
-      navigator.clipboard.writeText(script).then(() => {
-        alert("Script copiado para a área de transferência!");
-      });
-    }
+  <div class="file">
+    <p>📦 desings de sites em html</p>
+    <a href="site em html1" download>Baixar</a>
+    <a href="site em html2" download>Baixar</a>
+  </div>
 
-    function baixarExecutor() {
-      window.open("https://delta-executor.com/", "_blank");
-    }
-
-    function entrarDiscord() {
-      window.open("https://discord.gg/8KyfehGUnT", "_blank"); // Troque por seu link real
-    }
-
-    // 🚨 Webhook: Notifica o Discord quando alguém entra no site
-    fetch("https://discord.com/api/webhooks/1383861604952571985/g661lVIZpJOXtnLDcyXg52QhDqy5GG3h4dR3e96IPijBMmBnGnRCZn4JfkTGxxZ0lKBU", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        content: `🚨 https://phgs971.github.io Alguém entrou no site da PHGS sniperx Hub!\n📅 ${new Date().toLocaleDateString()} ⏰ ${new Date().toLocaleTimeString()}`
-      })
-    });
-  </script>
 </body>
 </html>
